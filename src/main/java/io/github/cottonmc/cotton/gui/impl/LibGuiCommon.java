@@ -1,12 +1,12 @@
 package io.github.cottonmc.cotton.gui.impl;
 
-import net.fabricmc.api.ModInitializer;
+import net.minecraftforge.fml.common.Mod;
 
-public final class LibGuiCommon implements ModInitializer {
+@Mod("libgui")
+public final class LibGuiCommon {
 	public static final String MOD_ID = "libgui";
 
-	@Override
-	public void onInitialize() {
+	public LibGuiCommon() {
 		ScreenNetworkingImpl.init();
 	}
 }

@@ -26,7 +26,8 @@ import java.util.function.Function;
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.literal;
 
-public class LibGuiTestClient implements ClientModInitializer {
+@Mod.EventBusSubscriber(modid = "libgui-test", value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class LibGuiTestClient {
 
 	@Override
 	public void onInitializeClient() {

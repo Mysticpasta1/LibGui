@@ -27,7 +27,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Optional;
 
-public class LibGuiTest implements ModInitializer {
+Mod("libgui-test")
+public class LibGuiTest {
 	public static final String MODID = "libgui-test";
 	
 	public static GuiBlock GUI_BLOCK;
@@ -38,8 +39,7 @@ public class LibGuiTest implements ModInitializer {
 	public static ScreenHandlerType<TestItemDescription> ITEM_SCREEN_HANDLER_TYPE;
 	public static ScreenHandlerType<ReallySimpleDescription> REALLY_SIMPLE_SCREEN_HANDLER_TYPE;
 
-	@Override
-	public void onInitialize() {
+	public LibGuiTest() {
 		Registry.register(Registries.ITEM, new Identifier(MODID, "client_gui"), new GuiItem());
 		
 		GUI_BLOCK = new GuiBlock();
