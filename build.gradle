@@ -56,6 +56,7 @@ dependencies {
 
 	modCompileOnly "dev.su5ed.sinytra.fabric-api:fabric-api:0.91.0+1.10.4+1.20.1"
 	modRuntimeOnly ("dev.su5ed.sinytra.fabric-api:fabric-api:0.91.0+1.10.4+1.20.1")
+	implementation("io.github.juuxel:libninepatch:${project.libninepatch_version}")
 	include api("io.github.juuxel:libninepatch:${project.libninepatch_version}")
 
 }
