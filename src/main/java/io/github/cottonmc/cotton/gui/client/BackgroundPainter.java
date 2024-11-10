@@ -116,31 +116,16 @@ public interface BackgroundPainter {
 	 *
 	 * <p>The resulting painter has a corner size of 4 px and a corner UV of 0.25.
 	 *
-	 * @param texture the background painter texture
+	 * the background painter texture
 	 * @return a new nine-patch background painter
 	 * @since 1.5.0
 	 * @see NinePatchBackgroundPainter
 	 */
-	public static NinePatchBackgroundPainter createNinePatch(Identifier texture) {
-		return createNinePatch(new Texture(texture), builder -> builder.cornerSize(4).cornerUv(0.25f));
-	}
-
-	/**
-	 * Creates a new nine-patch background painter with a custom configuration.
-	 *
-	 * @param texture      the background painter texture
-	 * @param configurator a consumer that configures the {@link NinePatch.Builder}
-	 * @return the created nine-patch background painter
-	 * @since 4.0.0
-	 * @see NinePatch
-	 * @see NinePatch.Builder
-	 * @see NinePatchBackgroundPainter
-	 */
-	public static NinePatchBackgroundPainter createNinePatch(Texture texture, Consumer<NinePatch.Builder<Identifier>> configurator) {
+	public static NinePatchBackgroundPainter createNinePatch(Identifier texture1) {
+		Texture texture = new Texture(texture1);
 		TextureRegion<Identifier> region = new TextureRegion<>(texture.image(), texture.u1(), texture.v1(), texture.u2(), texture.v2());
-		var builder = NinePatch.builder(region);
-		configurator.accept(builder);
-		return new NinePatchBackgroundPainter(builder.build());
+		var builder = NinePatch.builder(region).cornerSize(4).cornerUv(0.25f).build();
+		return new NinePatchBackgroundPainter(builder);
 	}
 
 	/**
